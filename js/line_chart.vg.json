@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "new cases",
+     "width": 700,
+    "height": 400,
+    "data": {"url": "https://raw.githubusercontent.com/allenliu2021/3179_test/main/A2_line_chart_data.csv"},
+    "transform": [
+        {"calculate": "timeParse(datum.date, '%d/%m/%Y')", "as": "date"}
+      ],
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "date", "type": "temporal"},
+      "y": {"field": "new_cases", "type": "quantitative"},
+      "color": {"field": "location", "type": "nominal"}
+    }
+  }
